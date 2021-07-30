@@ -10,6 +10,8 @@ class Alert extends Component {
     componentDidUpdate(prevProps){
         if (prevProps.cart.cart === this.props.cart.cart) {
             this.props.alert.success('Item added to cart')
+        } else {
+            this.props.alert.error('Item already in cart')
         }
     }
     render() {
