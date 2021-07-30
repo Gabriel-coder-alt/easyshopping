@@ -8,9 +8,7 @@ class Alert extends Component {
         message: PropTypes.object.isRequired,
     }
     componentDidUpdate(prevProps){
-        if (prevProps.cart.cart === this.props.cart.cart) {
-            this.props.alert.error('Item already in cart')
-        } else {
+        if (prevProps.cart.cart !== this.props.cart.cart) {
             this.props.alert.success('Item added to cart')
         }
     }
