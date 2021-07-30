@@ -20,7 +20,7 @@ class Description extends Component {
     }
 
     render() {
-        const { title, price, description, image, category, id } = this.props.product;
+        const { title, price, description, image, category } = this.props.product;
         return (
             <div className="container">
                 <div className="row mt-2">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart, updateCart } from '../../actions/cart/actions';
+import { addToCart, updateCart, createMessage } from '../../actions/cart/actions';
 
 function AddToCartButton(props) {
 
@@ -26,6 +26,7 @@ function AddToCartButton(props) {
 
             //update the cart with the newly created object
             props.addToCart(newItem);
+            props.createMessage();
             console.log('New item added to cart');
         }
     }
@@ -41,4 +42,4 @@ const mapStateToProps = (state) => ({
     cart: state.cart.cart
 })
 
-export default connect(mapStateToProps, { addToCart, updateCart })(AddToCartButton);
+export default connect(mapStateToProps, { addToCart, updateCart, createMessage })(AddToCartButton);

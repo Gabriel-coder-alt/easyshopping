@@ -1,10 +1,20 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, GET_CART, UPDATE_CART } from './types';
+import { ADD_TO_CART, REMOVE_FROM_CART, GET_CART, UPDATE_CART, CREATE_MESSAGE } from './types';
 
 export const addToCart = item => {
     return {
         type: ADD_TO_CART,
         payload: item
-    }
+    };
+}
+
+export const createMessage = () => {
+    return {
+        type: CREATE_MESSAGE,
+        payload: {
+            message: 'Item added to cart sucessfully',
+            status: '200'
+        }
+    };
 }
 
 export const removeFromCart = id => {
